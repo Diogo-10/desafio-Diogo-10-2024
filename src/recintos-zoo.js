@@ -44,9 +44,8 @@ class RecintosZoo {
                 if (animaisExistentes.some(({ especie }) => this.animais[especie].carnivoro !== carnivoro)) continue;
                 if (carnivoro && animaisExistentes.some(({ especie }) => especie !== animal)) continue;
                 if (animal === "HIPOPOTAMO" && recinto.bioma !== "savana e rio") continue;
-                if (animal === "MACACO" && espacoLivre === recinto.tamanhoTotal) continue; // Macaco não se sente confortável sem outro animal
+                if (animal === "MACACO" && espacoLivre === recinto.tamanhoTotal) continue; 
 
-                // Calcula o espaço extra se há mais de uma espécie
                 espacoExtra = animaisExistentes.some(({ especie }) => especie !== animal) ? 1 : 0;
             }
 
@@ -63,11 +62,10 @@ class RecintosZoo {
     }
 }
 
-// Exemplo de uso da classe
 const zoo = new RecintosZoo();
-console.log(zoo.analisaRecintos("MACACO", 2)); // Deve retornar recintos viáveis incluindo o recinto 3
-console.log(zoo.analisaRecintos("UNICORNIO", 1)); // Deve retornar "Animal inválido"
-console.log(zoo.analisaRecintos("LEAO", 0)); // Deve retornar "Quantidade inválida"
+console.log(zoo.analisaRecintos("MACACO", 2)); 
+console.log(zoo.analisaRecintos("UNICORNIO", 1)); 
+console.log(zoo.analisaRecintos("LEAO", 0)); 
 
 
 
